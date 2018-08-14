@@ -1,16 +1,16 @@
 const endPoint = 'http://localhost:3000/api/v1/device';
 
-const getDevices = () => {
+const getDevices = (cbSuccess) => {
     return fetch(endPoint)
         .then((response) => response.json())
         .then((response) => {
-            console.log(response);
+            cbSuccess(null, response.data);
         })
 
 };
 
 const getDevice = (id) => {
-    fetch(`${endPoint}${id}`)
+    fetch(`${endPoint}/${id}`)
         .then((response) => {
             console.log(response.data)
         })

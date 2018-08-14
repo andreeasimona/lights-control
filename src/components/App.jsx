@@ -1,12 +1,12 @@
 import React from 'react';
-
+import TableLights from './TableLights';
 
 const App = () => {
-  return (
-    <div>
-      Hello World
-      </div>
-  );
+    return (
+        <div>
+            <TableLights />
+        </div>
+    );
 
 }
 
