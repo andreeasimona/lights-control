@@ -1,13 +1,8 @@
-import React from 'react';
-import TableLights from './TableLights';
+import React from "react";
+import TableLights from "./TableLights";
 
 const App = () => {
-    return (
-        <div>
-            <TableLights />
-        </div>
-    );
-
-}
+    return <TableLights />;
+};
 
 export default App;

@@ -1,34 +1,29 @@
-import React from 'react';
+import React from "react";
 import api from "../api/lights";
-import { Table } from 'rendition';
+import { Table } from "rendition";
+import "../style/switcher.css";
+import store from "../state/store";
+import columns from "./Columns";
 
-const columns = [{ field: "int" }];
 
 class TableLights extends React.Component {
     componentDidMount() {
-        api.getDevices(this.cbSuccess);
+        api.getDevices();
+        store.subscribe(() =>
+            this.setState({
+                rows: store.getState().rows
+            })
+        );
     }
 
-    cbSuccess = (error, data) => {
-        console.log(error, data);
-        data.forEach(element => {
-            return {
-                ...element,
-                field: element.name
-            }
-        });
-        console.log({
-            ...data,
-            field: data.name
-        })
-        console.log(error, data);
-    }
     render() {
-        return (
-            <div>
-                <Table columns={columns} />
-            </div>
-        );
+        if (this.state && this.state.rows) {
+            return (
+                <div>
+                    <Table columns={columns} data={this.state.rows} />
+                </div>
+            );
+        } else return null;
     }
 }
 
