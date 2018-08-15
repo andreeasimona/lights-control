@@ -6,20 +6,12 @@ const getDevices = () => {
 	return fetch(endPoint)
 		.then((response) => response.json())
 		.then((response) => {
-			console.log(response.data);
 			store.dispatch({
 				type: actions.getDevices,
 				rows: response.data
 			});
 		})
 
-};
-
-const getDevice = (id) => {
-	fetch(`${endPoint}/${id}`)
-		.then((response) => {
-			console.log(response.data)
-		})
 };
 
 const updateDevice = (data) => {
@@ -34,16 +26,15 @@ const updateDevice = (data) => {
 		})
 		.then(response => response.json())
 		.then((response) => {
-			store.dispatch({
+			/*store.dispatch({
 				type: actions.updateDevice,
 				row: response.data
-			});
+			});*/
 		})
 };
 
 const api = {
 	getDevices: getDevices,
-	getDevice: getDevice,
 	updateDevice: updateDevice
 };
 

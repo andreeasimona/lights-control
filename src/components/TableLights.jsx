@@ -5,7 +5,6 @@ import "../style/switcher.css";
 import store from "../state/store";
 import columns from "./Columns";
 
-
 class TableLights extends React.Component {
     componentDidMount() {
         api.getDevices();
@@ -18,11 +17,7 @@ class TableLights extends React.Component {
 
     render() {
         if (this.state && this.state.rows) {
-            return (
-                <div>
-                    <Table columns={columns} data={this.state.rows} />
-                </div>
-            );
+            return <Table columns={columns} data={this.state.rows} />;
         } else return null;
     }
 }
