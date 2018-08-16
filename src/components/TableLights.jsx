@@ -5,7 +5,7 @@ import "../style/switcher.css";
 import store from "../state/store";
 import columns from "./Columns";
 
-class TableLights extends React.Component {
+class TableLights extends React.PureComponent {
     componentDidMount() {
         api.getDevices();
         store.subscribe(() =>

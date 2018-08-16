@@ -2,16 +2,16 @@ import store from "../state/store";
 import actions from "../state/actions";
 const endPoint = 'http://localhost:3000/api/v1/device';
 
-const getDevices = () => {
-	return fetch(endPoint)
-		.then((response) => response.json())
+const getDevices = async () => {
+	let results = await fetch(endPoint)
 		.then((response) => {
-			store.dispatch({
-				type: actions.getDevices,
-				rows: response.data
-			});
-		})
-
+			return response.json()
+		});
+	store.dispatch({
+		type: actions.getDevices,
+		rows: results.data
+	});
+	return results;
 };
 
 const updateDevice = (data) => {
