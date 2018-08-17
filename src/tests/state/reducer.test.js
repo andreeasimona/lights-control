@@ -29,8 +29,8 @@ const newRowData = {
     brightness: 0
 };
 
-describe("reducer handles the actions correctly", function() {
-    it("should store the lights corectly", function() {
+describe("reducer handles the actions correctly", () => {
+    it("should store the lights corectly", () => {
         const nextState = reducer(
             {},
             {
@@ -41,7 +41,7 @@ describe("reducer handles the actions correctly", function() {
         expect(nextState.rows).to.equal(rows);
     });
 
-    it("should update the lights corectly", function() {
+    it("should update the lights corectly", () => {
         let nextState = reducer(
             {},
             {
@@ -61,11 +61,6 @@ describe("reducer handles the actions correctly", function() {
             return el;
         });
         expect(rows).to.equal(rows);
-        expect(...nextState.rows).to.equal(...newRows);
-        expect(
-            nextState.rows.find(el => {
-                el.id === newRowData.id;
-            })
-        ).to.equal(newRows.id);
+        expect(...nextState.rows).to.deep.equal(...newRows);
     });
 });

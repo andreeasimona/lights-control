@@ -3,19 +3,19 @@ import api from "../api/lights";
 import { Table } from "rendition";
 import "../style/switcher.css";
 import store from "../state/store";
-import columns from "./Columns";
-
+import columns from "./columns";
 class TableLights extends React.PureComponent {
     componentDidMount() {
         api.getDevices();
-        store.subscribe(() =>
+        store.subscribe(() => {
             this.setState({
                 rows: store.getState().rows
-            })
-        );
+            });
+        });
     }
 
     render() {
+        //console.log("componenet state", this.state);
         if (this.state && this.state.rows) {
             return <Table columns={columns} data={this.state.rows} />;
         } else return null;

@@ -1,5 +1,5 @@
 import React from "react";
-import TableLights from "./TableLights";
+import TableLights from "./tableLights";
 
 const App = () => {
     return <TableLights />;
