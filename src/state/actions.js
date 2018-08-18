@@ -1,6 +1,6 @@
 const actions = {
-    getDevices: "getDevices",
-    updateDevice: "updateDevice"
+    getDevices: 'getDevices',
+    updateDevice: 'updateDevice'
 };
 
 export default actions;

@@ -1,9 +1,8 @@
-import React from "react";
-import api from "../api/lights";
-import { Input } from "rendition";
-import throttle from "lodash.throttle";
-import store from "../state/store";
-import actions from "../state/actions";
+import React from 'react';
+import api from '../api/lights';
+import throttle from 'lodash.throttle';
+import store from '../state/store';
+import actions from '../state/actions';
 
 const onChangeUpdate = throttle(dataCell => {
     api.updateDevice(dataCell);
@@ -19,8 +18,8 @@ const onChange = newData => {
 
 const columns = [
     {
-        field: "name",
-        label: "Room",
+        field: 'name',
+        label: 'Room',
         render: (value, dataCell) => {
             return (
                 <input
@@ -34,14 +33,14 @@ const columns = [
         }
     },
     {
-        field: "active",
-        label: "Active",
+        field: 'active',
+        label: 'Active',
         render: (value, dataCell) => {
             return (
                 <code>
-                    <label className="switch">
+                    <label className='switch'>
                         <input
-                            type="checkbox"
+                            type='checkbox'
                             checked={value}
                             onChange={e => {
                                 let active = e.target.checked;
@@ -49,21 +48,21 @@ const columns = [
                                 onChange({ ...dataCell, brightness, active });
                             }}
                         />
-                        <span className="slider" />
+                        <span className='slider' />
                     </label>
                 </code>
             );
         }
     },
     {
-        field: "brightness",
-        label: "Brightness",
+        field: 'brightness',
+        label: 'Brightness',
         render: (value, dataCell) => (
             <code>
                 <input
-                    type="range"
-                    min="0"
-                    max="100"
+                    type='range'
+                    min='0'
+                    max='100'
                     value={value}
                     onChange={e => {
                         let brightness = e.target.value;

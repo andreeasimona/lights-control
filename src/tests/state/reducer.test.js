@@ -1,22 +1,22 @@
-import { expect } from "chai";
-import reducer from "../../state/reducer";
-import actionTypes from "../../state/actions";
+import { expect } from 'chai';
+import reducer from '../../state/reducer';
+import actionTypes from '../../state/actions';
 const rows = [
     {
         id: 1,
-        name: "Room 1",
+        name: 'Room 1',
         active: true,
         brightness: 40
     },
     {
         id: 2,
-        name: "Room 2",
+        name: 'Room 2',
         active: false,
         brightness: 80
     },
     {
         id: 3,
-        name: "Room 3",
+        name: 'Room 3',
         active: true,
         brightness: 20
     }
@@ -24,13 +24,13 @@ const rows = [
 
 const newRowData = {
     id: 2,
-    name: "I am a new room",
+    name: 'I am a new room',
     active: true,
     brightness: 0
 };
 
-describe("reducer handles the actions correctly", () => {
-    it("should store the lights corectly", () => {
+describe('reducer handles the actions correctly', () => {
+    it('should store the lights corectly', () => {
         const nextState = reducer(
             {},
             {
@@ -41,7 +41,7 @@ describe("reducer handles the actions correctly", () => {
         expect(nextState.rows).to.equal(rows);
     });
 
-    it("should update the lights corectly", () => {
+    it('should update the lights corectly', () => {
         let nextState = reducer(
             {},
             {

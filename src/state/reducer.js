@@ -1,5 +1,5 @@
-import actionTypes from "./actions";
-let reducerLights = (state, action) => {
+import actionTypes from './actions';
+let reducerLights = (state = { rows: [] }, action) => {
     switch (action.type) {
     case actionTypes.getDevices:
         return {

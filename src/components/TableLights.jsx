@@ -1,9 +1,9 @@
-import React from "react";
-import api from "../api/lights";
-import { Table } from "rendition";
-import "../style/switcher.css";
-import store from "../state/store";
-import columns from "./columns";
+import React from 'react';
+import api from '../api/lights';
+import { Table } from 'rendition';
+import '../style/switcher.css';
+import store from '../state/store';
+import columns from './columns';
 class TableLights extends React.PureComponent {
     componentDidMount() {
         api.getDevices();
@@ -15,7 +15,6 @@ class TableLights extends React.PureComponent {
     }
 
     render() {
-        //console.log("componenet state", this.state);
         if (this.state && this.state.rows) {
             return <Table columns={columns} data={this.state.rows} />;
         } else return null;

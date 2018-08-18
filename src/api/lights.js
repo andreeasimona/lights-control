@@ -1,6 +1,6 @@
-import store from "../state/store";
-import actions from "../state/actions";
-const endPoint = "http://localhost:3000/api/v1/device";
+import store from '../state/store';
+import actions from '../state/actions';
+const endPoint = 'http://localhost:3000/api/v1/device';
 
 const getDevices = async () => {
     let result = await fetch(endPoint)
@@ -16,9 +16,9 @@ const getDevices = async () => {
 
 const updateDevice = async (data) => {
     let result = await fetch(`${endPoint}/${data.id}`, {
-        method: "PATCH",
+        method: 'PATCH',
         headers: {
-            "content-type": "application/json"
+            'content-type': 'application/json'
         },
         body: JSON.stringify({
             data

@@ -1,13 +1,13 @@
 const mockedGetData = [
     {
         id: 1,
-        name: "Balcony",
+        name: 'Balcony',
         active: true,
         brightness: 0
     },
     {
         id: 2,
-        name: "Bedroom 01",
+        name: 'Bedroom 01',
         active: false,
         brightness: 70
     }
@@ -15,7 +15,7 @@ const mockedGetData = [
 
 const mockedUpdateData = {
     id: 1,
-    name: "Balcony",
+    name: 'Balcony',
     active: true,
     brightness: 0
 };
