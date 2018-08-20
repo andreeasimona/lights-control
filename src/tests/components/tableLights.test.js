@@ -49,7 +49,7 @@ describe('TableLights components works corectly', () => {
         const mokedDataGet = mokedData.get;
         wrapper.setState({ rows: mokedDataGet });
         const instance = wrapper.instance();
-        expect(...instance.state.rows).to.equal(...mokedDataGet);
+        expect(...instance.state.rows).to.deep.equal(...mokedDataGet);
         expect(wrapper.find(selectors.header)).to.have.length(1);
         columns.map((element, index) => {
             expect(

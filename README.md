@@ -11,7 +11,7 @@ A dynamic lights controller
 
 ## Test in local enviroment. Type in the root folder of the project:
    - for javascript tests: npm test
-   - fro eslint check: npm run linter
+   - for eslint check: npm run linter
 
 ## Structure
    - components folder: All React components
